@@ -11,9 +11,11 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <h1>Test</h1>
+      <div class='container mx-auto p-4 shadow-lg rounded-md'>
+        <Users />
+        <AddUsers />
+      </div>
 
-      <Users />
-      <AddUsers />
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
