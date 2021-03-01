@@ -14,3 +14,10 @@ exports.addNewUser = async (req, res, next) => {
 
   res.json(user);
 };
+
+exports.deleteUser = async (req, res, next) => {
+  const { id } = req.body;
+  const user = await User.findById(id);
+  await user.remove();
+  res.json({ message: 'User removed' });
+};

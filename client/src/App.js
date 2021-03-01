@@ -3,6 +3,7 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import './App.css';
 import Users from './components/Users';
 import { AddUsers } from './components/AddUsers';
+import { Wrapper } from './components/styled/Wrapper';
 
 // Create a client
 const queryClient = new QueryClient();
@@ -10,11 +11,12 @@ const queryClient = new QueryClient();
 const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
-      <h1>Test</h1>
-      <div class='container mx-auto p-4 shadow-lg rounded-md'>
+      <Wrapper md>
+        <h1>User adder</h1>
+
         <Users />
         <AddUsers />
-      </div>
+      </Wrapper>
 
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
